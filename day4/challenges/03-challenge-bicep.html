@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Deploy to Azure WebApp using GitHub Actions | Azure Developer College</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    
+    <meta name="description" content="">
+    
+    <link rel="preload" href="/trainingdays/assets/css/0.styles.307428eb.css" as="style"><link rel="preload" href="/trainingdays/assets/js/app.7bd69a05.js" as="script"><link rel="preload" href="/trainingdays/assets/js/2.07f1ee3f.js" as="script"><link rel="preload" href="/trainingdays/assets/js/32.21668753.js" as="script"><link rel="prefetch" href="/trainingdays/assets/js/10.baf1eb6b.js"><link rel="prefetch" href="/trainingdays/assets/js/11.b44e283e.js"><link rel="prefetch" href="/trainingdays/assets/js/12.88aa24bf.js"><link rel="prefetch" href="/trainingdays/assets/js/13.a697df1b.js"><link rel="prefetch" href="/trainingdays/assets/js/14.5164f9ce.js"><link rel="prefetch" href="/trainingdays/assets/js/15.56cd452b.js"><link rel="prefetch" href="/trainingdays/assets/js/16.69e6fa2a.js"><link rel="prefetch" href="/trainingdays/assets/js/17.eb2751ea.js"><link rel="prefetch" href="/trainingdays/assets/js/18.9b007715.js"><link rel="prefetch" href="/trainingdays/assets/js/19.e4502b6a.js"><link rel="prefetch" href="/trainingdays/assets/js/20.295bd0e0.js"><link rel="prefetch" href="/trainingdays/assets/js/21.4a61bc81.js"><link rel="prefetch" href="/trainingdays/assets/js/22.a8a2b416.js"><link rel="prefetch" href="/trainingdays/assets/js/23.1f453734.js"><link rel="prefetch" href="/trainingdays/assets/js/24.c4f1de2c.js"><link rel="prefetch" href="/trainingdays/assets/js/25.a7cd4d99.js"><link rel="prefetch" href="/trainingdays/assets/js/26.6d7c1030.js"><link rel="prefetch" href="/trainingdays/assets/js/27.0ba577e2.js"><link rel="prefetch" href="/trainingdays/assets/js/28.9da5ae64.js"><link rel="prefetch" href="/trainingdays/assets/js/29.baab0ee2.js"><link rel="prefetch" href="/trainingdays/assets/js/3.38e02636.js"><link rel="prefetch" href="/trainingdays/assets/js/30.8cd92fa3.js"><link rel="prefetch" href="/trainingdays/assets/js/31.faf0a773.js"><link rel="prefetch" href="/trainingdays/assets/js/33.db2c37f9.js"><link rel="prefetch" href="/trainingdays/assets/js/34.0c315bb9.js"><link rel="prefetch" href="/trainingdays/assets/js/35.2c85b4eb.js"><link rel="prefetch" href="/trainingdays/assets/js/36.eb144644.js"><link rel="prefetch" href="/trainingdays/assets/js/37.8c796407.js"><link rel="prefetch" href="/trainingdays/assets/js/38.95d0e55c.js"><link rel="prefetch" href="/trainingdays/assets/js/39.f675a227.js"><link rel="prefetch" href="/trainingdays/assets/js/4.c114eef8.js"><link rel="prefetch" href="/trainingdays/assets/js/40.20e39bb5.js"><link rel="prefetch" href="/trainingdays/assets/js/41.d7d119ea.js"><link rel="prefetch" href="/trainingdays/assets/js/42.574194b0.js"><link rel="prefetch" href="/trainingdays/assets/js/43.a392c967.js"><link rel="prefetch" href="/trainingdays/assets/js/44.39b4aec0.js"><link rel="prefetch" href="/trainingdays/assets/js/45.33367368.js"><link rel="prefetch" href="/trainingdays/assets/js/46.4eb8fc29.js"><link rel="prefetch" href="/trainingdays/assets/js/47.8929d028.js"><link rel="prefetch" href="/trainingdays/assets/js/48.07980967.js"><link rel="prefetch" href="/trainingdays/assets/js/49.bea6e5e5.js"><link rel="prefetch" href="/trainingdays/assets/js/5.e25f1a2b.js"><link rel="prefetch" href="/trainingdays/assets/js/50.4ffdc7d0.js"><link rel="prefetch" href="/trainingdays/assets/js/51.a24d23db.js"><link rel="prefetch" href="/trainingdays/assets/js/52.61b16709.js"><link rel="prefetch" href="/trainingdays/assets/js/53.17664642.js"><link rel="prefetch" href="/trainingdays/assets/js/54.35b0d218.js"><link rel="prefetch" href="/trainingdays/assets/js/55.3df7e114.js"><link rel="prefetch" href="/trainingdays/assets/js/56.73e7ca10.js"><link rel="prefetch" href="/trainingdays/assets/js/57.5f5ae11c.js"><link rel="prefetch" href="/trainingdays/assets/js/58.ec64f971.js"><link rel="prefetch" href="/trainingdays/assets/js/59.8455bced.js"><link rel="prefetch" href="/trainingdays/assets/js/6.6b3e815d.js"><link rel="prefetch" href="/trainingdays/assets/js/60.0640d3a3.js"><link rel="prefetch" href="/trainingdays/assets/js/61.96a0acd6.js"><link rel="prefetch" href="/trainingdays/assets/js/62.d2b39e79.js"><link rel="prefetch" href="/trainingdays/assets/js/63.1bc1cab6.js"><link rel="prefetch" href="/trainingdays/assets/js/64.7c5a2c55.js"><link rel="prefetch" href="/trainingdays/assets/js/65.f3e48afe.js"><link rel="prefetch" href="/trainingdays/assets/js/66.e0b4446b.js"><link rel="prefetch" href="/trainingdays/assets/js/67.96612702.js"><link rel="prefetch" href="/trainingdays/assets/js/68.3e673643.js"><link rel="prefetch" href="/trainingdays/assets/js/69.aa8e0305.js"><link rel="prefetch" href="/trainingdays/assets/js/7.9916097a.js"><link rel="prefetch" href="/trainingdays/assets/js/70.6944ef91.js"><link rel="prefetch" href="/trainingdays/assets/js/71.2731ef39.js"><link rel="prefetch" href="/trainingdays/assets/js/72.cd80a64d.js"><link rel="prefetch" href="/trainingdays/assets/js/73.ff644540.js"><link rel="prefetch" href="/trainingdays/assets/js/74.af5fcac0.js"><link rel="prefetch" href="/trainingdays/assets/js/75.0bb96850.js"><link rel="prefetch" href="/trainingdays/assets/js/76.ed3ce61d.js"><link rel="prefetch" href="/trainingdays/assets/js/77.1f22538d.js"><link rel="prefetch" href="/trainingdays/assets/js/78.52c610a7.js"><link rel="prefetch" href="/trainingdays/assets/js/79.5136c3a5.js"><link rel="prefetch" href="/trainingdays/assets/js/8.ae658808.js"><link rel="prefetch" href="/trainingdays/assets/js/80.00e8b002.js"><link rel="prefetch" href="/trainingdays/assets/js/81.df2ebd91.js"><link rel="prefetch" href="/trainingdays/assets/js/82.a108a71b.js"><link rel="prefetch" href="/trainingdays/assets/js/83.df2a5b95.js"><link rel="prefetch" href="/trainingdays/assets/js/84.cd4a9c5f.js"><link rel="prefetch" href="/trainingdays/assets/js/85.dac31e3f.js"><link rel="prefetch" href="/trainingdays/assets/js/86.51f90ea1.js"><link rel="prefetch" href="/trainingdays/assets/js/87.64c6320c.js"><link rel="prefetch" href="/trainingdays/assets/js/88.9af67947.js"><link rel="prefetch" href="/trainingdays/assets/js/89.46515846.js"><link rel="prefetch" href="/trainingdays/assets/js/9.1012e5bc.js">
+    <link rel="stylesheet" href="/trainingdays/assets/css/0.styles.307428eb.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/trainingdays/" class="home-link router-link-active"><!----> <span class="site-name">Azure Developer College</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"> <a href="https://github.com/azuredevcollege/trainingdays" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"> <a href="https://github.com/azuredevcollege/trainingdays" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><a href="/trainingdays/" aria-current="page" class="sidebar-link">Home</a></li><li><a href="/trainingdays/day1/" class="sidebar-link">Day 1 Azure Fundamentals &amp; Infrastructure</a></li><li><a href="/trainingdays/day2/" class="sidebar-link">Day 2 Azure Development</a></li><li><a href="/trainingdays/day3/" class="sidebar-link">Day 3 Data and AI</a></li><li><a href="/trainingdays/day4/" aria-current="page" class="sidebar-link">Day 4 DevOps and Monitoring</a></li><li><a href="/trainingdays/day5/" class="sidebar-link">Day 5 Identity and Architecture</a></li><li><a href="/trainingdays/day6/" class="sidebar-link">Day 6 Containerization</a></li><li><a href="/trainingdays/day7/" class="sidebar-link">Day 7 Kubernetes</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="deploy-to-azure-webapp-using-github-actions"><a href="#deploy-to-azure-webapp-using-github-actions" class="header-anchor">#</a> Deploy to Azure WebApp using GitHub Actions</h1> <p>⏲️ <em>est. time to complete: 30 min.</em> ⏲️</p> <h2 id="here-is-what-you-will-learn-🎯"><a href="#here-is-what-you-will-learn-🎯" class="header-anchor">#</a> Here is what you will learn 🎯</h2> <p>In this challenge you will learn how to:</p> <ul><li>access your Azure Subscription from GitHub Actions</li> <li>use GitHub Secrets to securely store access credentials</li> <li>create a Service Principal for your Azure Subscription</li> <li>create a Resource Group in GitHub Actions</li> <li>deploy a bicep template using GitHub Actions</li> <li>build and deploy your WebApp to Azure AppService</li></ul> <h2 id="table-of-contents"><a href="#table-of-contents" class="header-anchor">#</a> Table of contents</h2> <ol><li><a href="#getting-started">Getting started</a></li> <li><a href="#create-azure-bicep-template">Create Azure Bicep template</a></li> <li><a href="#create-resource-group-and-deploy-bicep-template">Create resource group and deploy Bicep template</a></li> <li><a href="#create-a-simple-express-app">Create a simple express app</a></li> <li><a href="#deploy-appservice">Deploy AppService</a></li> <li><a href="#finish">Finish</a></li></ol> <h2 id="getting-started"><a href="#getting-started" class="header-anchor">#</a> Getting started</h2> <p>In this challenge we will learn how to securely access your Azure Subscriptions
+from GitHub, how to create infrastructure from code and how to deploy into the
+freshly created infrastructure.</p> <p>As in the previous challenges we will start with a new repository.</p> <p>Create one now.</p> <h3 id="accessing-azure"><a href="#accessing-azure" class="header-anchor">#</a> Accessing Azure</h3> <p>In your fresh repository create a new GitHub Actions workflow.</p> <p>We will use the <code>Azure/login</code> Action to give our deploy job permissions within
+our Azure Subscription. Take a look at the
+<a href="https://github.com/Azure/login" target="_blank" rel="noopener noreferrer">documentation<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> for the <code>Azure/login</code> Action and
+read through the <a href="https://github.com/Azure/login#configure-deployment-credentials" target="_blank" rel="noopener noreferrer">&quot;Configure deployment
+credentials&quot;<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>
+section.</p> <p>You can use the sample workflow provided below. Just commit it into your
+repository and watch the first execution fail.</p> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token comment"># az-login.yaml</span>
+<span class="token key atrule">name</span><span class="token punctuation">:</span> Display Account Info
+
+<span class="token key atrule">on</span><span class="token punctuation">:</span>
+  <span class="token key atrule">push</span><span class="token punctuation">:</span>
+
+<span class="token key atrule">jobs</span><span class="token punctuation">:</span>
+  <span class="token key atrule">login</span><span class="token punctuation">:</span>
+    <span class="token key atrule">runs-on</span><span class="token punctuation">:</span> ubuntu<span class="token punctuation">-</span>latest
+
+    <span class="token key atrule">steps</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Azure Login
+        <span class="token key atrule">uses</span><span class="token punctuation">:</span> Azure/login@v1
+        <span class="token key atrule">with</span><span class="token punctuation">:</span>
+          <span class="token key atrule">creds</span><span class="token punctuation">:</span> $<span class="token punctuation">{</span><span class="token punctuation">{</span> secrets.AZURE_CREDENTIALS <span class="token punctuation">}</span><span class="token punctuation">}</span>
+
+      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Display Azure account info
+        <span class="token key atrule">run</span><span class="token punctuation">:</span> az account show <span class="token punctuation">-</span>o yaml
+</code></pre></div><p>Out of the box your GitHub Pipeline will not have any credentials in place to
+log into your Azure Subscriptions. The first run of your pipeline should fail
+with an error message like this:</p> <div class="language- extra-class"><pre class="language-text"><code>Error: Az CLI Login failed. Please check the credentials.
+</code></pre></div><p><img src="/trainingdays/assets/img/MissingCreds.8a79a647.png" alt="Failed pipeline run due to missing credentials"></p> <h3 id="programmatic-access-to-azure"><a href="#programmatic-access-to-azure" class="header-anchor">#</a> Programmatic access to Azure</h3> <p>To allow GitHub to interact with our Azure Subscriptions we need to create a
+Service Account in our Azure Active Directory. This account represents not a
+user but a service, machine or digital agent. These accounts are called
+<a href="https://docs.microsoft.com/en-us/azure/active-directory/develop/app-objects-and-service-principals#service-principal-object" target="_blank" rel="noopener noreferrer"><strong>Service
+Principal</strong><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>.</p> <p>Having read the documentation on the <code>Azure/login</code> you might already have seen
+the following line to create a Service Principal for role based access control.</p> <p>Make sure to <strong>change the name</strong> for your service principal so you can identify
+it later on your Azure AD and scope the contributor access to your subscription
+by setting your subscription id for the scope.</p> <div class="language-shell extra-class"><pre class="language-shell"><code><span class="token comment"># Change the name and set use your subscription-id to create a Service Principal.</span>
+az ad sp create-for-rbac --name <span class="token string">&quot;{name}-github-actions-sp&quot;</span> --sdk-auth --role contributor --scopes /subscriptions/<span class="token punctuation">{</span>subscription-id<span class="token punctuation">}</span>
+</code></pre></div><div class="custom-block warning"><p class="custom-block-title">WARNING</p> <p>Take a <strong>secure</strong> note of the <code>json</code> response returned by this command. You can
+reuse these credentials throughout the day.</p></div> <div class="custom-block tip"><p class="custom-block-title">TIP</p> <p>📝 It is best practice to set the scope of the Service Principal based on the
+<strong>principal of least privilege</strong>. Here we scope to the entire subscription so you
+can use it to create resource groups programmatically and reuse it for the rest
+of todays challenges. On production accounts you will probably scope the access
+to a specific resource group.</p> <div class="language-shell extra-class"><pre class="language-shell"><code>--scopes /subscriptions/<span class="token punctuation">{</span>subscription-id<span class="token punctuation">}</span>/resourceGroups/<span class="token punctuation">{</span>resource-group<span class="token punctuation">}</span>
+</code></pre></div><p>Or even a specific resource:</p> <div class="language-shell extra-class"><pre class="language-shell"><code>--scopes /subscriptions/<span class="token punctuation">{</span>subscription-id<span class="token punctuation">}</span>/resourceGroups/<span class="token punctuation">{</span>resource-group<span class="token punctuation">}</span>/providers/Microsoft.Web/sites/<span class="token punctuation">{</span>app-name<span class="token punctuation">}</span>
+</code></pre></div></div> <h3 id="storing-the-secret"><a href="#storing-the-secret" class="header-anchor">#</a> Storing the secret</h3> <p>Now that we have created the Service Principal and have acquired the necessary
+access credentials we can store them in our repository in GitHub.</p> <p>Navigate to your repositories <code>Settings &gt; Secrets</code> page and add a new secret
+named <code>AZURE_CREDENTIALS</code>.</p> <div><p>Now we should be able to re-run our workflow file from the beginning. We
+referenced the GitHub secret using the <code>${{ secrets.AZURE_CREDENTIALS }}</code>
+expression in the <code>azure/login</code> action.</p></div><p>Before continuing, make sure the workflow executes successfully and you can see
+your account information in the workflow output.</p> <h2 id="create-azure-bicep-template"><a href="#create-azure-bicep-template" class="header-anchor">#</a> Create Azure Bicep template</h2> <p>Let's see how we can prepare our infrastructure for our WebApp deployment.</p> <p>We will start pretty simple with just the minimal requirements to run an Azure
+App Service. That mean deploying an App Service Plan and the App Service itself.</p> <p><img src="/trainingdays/assets/img/appserviceandplan.604819db.png" alt="Architecture of AppServicePlan and AppService"></p> <p>To be able to expand and evolve our infrastructure together with our
+applications source code, we will use <em>infrastructure as code</em> <strong>IaC</strong> to
+describe the desired state of our resources.</p> <p>Take a look a the following Azure Bicep template.</p> <div class="language-bicep extra-class"><pre class="language-text"><code>// infra.bicep
+@description('The SKU of App Service Plan')
+param planSku string = 'B1'
+
+@maxLength(8)
+@description('Name of environment')
+param env string = 'webapp'
+
+@description('Resource tags object to use')
+param resourceTag object = {
+  Environment: env
+  Application: 'Webapp'
+}
+var location = resourceGroup().location
+
+var webAppName = 'app-webapp-${env}-${uniqueString(resourceGroup().id)}'
+var planName = 'plan-webapp-${env}-${uniqueString(resourceGroup().id)}'
+
+resource appplan 'Microsoft.Web/serverfarms@2020-12-01' = {
+  name: planName
+  location: location
+  kind: 'linux'
+  sku: {
+    name: planSku
+  }
+  properties: {
+    reserved: true
+  }
+}
+
+resource webapp 'Microsoft.Web/sites@2020-12-01' = {
+  name: webAppName
+  location: location
+  tags: resourceTag
+  kind: 'app,linux'
+  properties: {
+    serverFarmId: appplan.id
+    httpsOnly: true
+    clientAffinityEnabled: false
+    siteConfig: {
+      linuxFxVersion: 'NODE|14-lts'
+      alwaysOn: true
+    }
+  }
+}
+
+output webAppName string = webAppName
+output webAppEndpoint string = webapp.properties.defaultHostName
+</code></pre></div><p>This template describes just the two resources we will need for now.</p> <p>Note that we can configure this template using it's parameters <code>env</code>, <code>planSku</code>
+and <code>resourceTag</code> and that a deployment of this template will output two values
+<code>webAppName</code> and <code>webAppEndpoint</code>. We will use these in the following step, when
+we deploy the template to a resource group using our workflow in GitHub.</p> <p>Create a new <code>infra.bicep</code> file in your repository containing the bicep template
+above.</p> <p>If you want to try out the bicep template from your local machine before
+automating everything in GitHub you can do so by creating a new resource group.</p> <div class="language-shell extra-class"><pre class="language-shell"><code>az group create --name bicep-template-test --location westeurope
+</code></pre></div><p>Then deploy the template to that resource group like this:</p> <div class="language-shell extra-class"><pre class="language-shell"><code>az deployment group create -g bicep-template-test --template-file infra.bicep
+</code></pre></div><p>If you do this don't forget to delete the resource group when you are done.</p> <h2 id="create-resource-group-and-deploy-bicep-template"><a href="#create-resource-group-and-deploy-bicep-template" class="header-anchor">#</a> Create resource group and deploy Bicep template</h2> <p>Let's go back to our GitHub Actions workflow from the beginning.</p> <p>We will start by renaming and extending the workflow file to do the following:</p> <ul><li>declare variables for all steps in the entire workflow</li> <li>checkout the repository</li> <li>log in to Azure</li> <li>create a new resource group</li> <li>deploy the bicep template to that group</li> <li>print one of the template outputs in the workflow log</li></ul> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token comment"># deploy-infra.yaml</span>
+<span class="token key atrule">name</span><span class="token punctuation">:</span> Deploy Bicep template
+
+<span class="token key atrule">on</span><span class="token punctuation">:</span>
+  <span class="token key atrule">push</span><span class="token punctuation">:</span>
+
+<span class="token key atrule">env</span><span class="token punctuation">:</span>
+  <span class="token comment"># Change this if more then one user is deploying to</span>
+  <span class="token comment"># the same subscription</span>
+  <span class="token key atrule">RESOURCE_GROUP_NAME</span><span class="token punctuation">:</span> github<span class="token punctuation">-</span>action<span class="token punctuation">-</span>bicep<span class="token punctuation">-</span>rg
+  <span class="token key atrule">RESOURCE_GROUP_LOCATION</span><span class="token punctuation">:</span> westeurope
+  <span class="token key atrule">ENV_NAME</span><span class="token punctuation">:</span> devd4
+
+<span class="token key atrule">jobs</span><span class="token punctuation">:</span>
+  <span class="token key atrule">deploy-infra</span><span class="token punctuation">:</span>
+    <span class="token key atrule">runs-on</span><span class="token punctuation">:</span> ubuntu<span class="token punctuation">-</span>latest
+
+    <span class="token key atrule">steps</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token key atrule">uses</span><span class="token punctuation">:</span> actions/checkout@v2
+
+      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Azure Login
+        <span class="token key atrule">uses</span><span class="token punctuation">:</span> Azure/login@v1
+        <span class="token key atrule">with</span><span class="token punctuation">:</span>
+          <span class="token key atrule">creds</span><span class="token punctuation">:</span> $<span class="token punctuation">{</span><span class="token punctuation">{</span> secrets.AZURE_CREDENTIALS <span class="token punctuation">}</span><span class="token punctuation">}</span>
+
+      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Create Resource Group
+        <span class="token key atrule">run</span><span class="token punctuation">:</span> <span class="token punctuation">&gt;</span><span class="token scalar string">
+          az group create
+          -l ${{ env.RESOURCE_GROUP_LOCATION }}
+          -n ${{ env.RESOURCE_GROUP_NAME }}</span>
+
+      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Deploy Bicep template
+        <span class="token key atrule">uses</span><span class="token punctuation">:</span> azure/arm<span class="token punctuation">-</span>deploy@v1
+        <span class="token key atrule">id</span><span class="token punctuation">:</span> infra
+        <span class="token key atrule">with</span><span class="token punctuation">:</span>
+          <span class="token key atrule">resourceGroupName</span><span class="token punctuation">:</span> $<span class="token punctuation">{</span><span class="token punctuation">{</span> env.RESOURCE_GROUP_NAME <span class="token punctuation">}</span><span class="token punctuation">}</span>
+          <span class="token key atrule">template</span><span class="token punctuation">:</span> ./infra.bicep
+          <span class="token comment"># Here we pass the template parameters to the deployment</span>
+          <span class="token key atrule">parameters</span><span class="token punctuation">:</span> <span class="token punctuation">&gt;</span><span class="token scalar string">
+            env=${{ env.ENV_NAME }}</span>
+
+      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Print WebApp endpoint
+        <span class="token comment"># Here we read the outputs of our previously deployed template</span>
+        <span class="token key atrule">run</span><span class="token punctuation">:</span> echo https<span class="token punctuation">:</span>//$<span class="token punctuation">{</span><span class="token punctuation">{</span> steps.infra.outputs.webAppEndpoint <span class="token punctuation">}</span><span class="token punctuation">}</span>
+</code></pre></div><p>With the updated workflow file, the stored secret and the <code>infra.bicep</code> template
+in place, we should be able to run our first deployment directly into our Azure
+subscription.</p> <p>Check the workflow log. You should be able to find the <code>Print WebApp endpoint</code>
+step and within the link to your freshly deployed app service. You can also take
+a look at the Azure Portal to make sure the desired resources have been
+deployed.</p> <p><img src="/trainingdays/assets/img/webappendpoint.5b16ac8e.png" alt="WebApp endpoint being printed to the workflow log"></p> <div class="custom-block tip"><p class="custom-block-title">TIP</p> <p>📝 Should you run into any errors during the template deployment steps, you can
+check the resource groups deployment tab on the Azure Portal to get more
+information on what went wrong.</p> <p><img src="/trainingdays/assets/img/deploymenterror.b1ecd993.png" alt="Resource group deployment error detail on Azure Portal"></p></div> <h2 id="create-a-simple-express-app"><a href="#create-a-simple-express-app" class="header-anchor">#</a> Create a simple express app</h2> <p>You should have just seen the welcome page for the Azure App Service. Now we
+want to see how we could deploy our own application to the App Service.</p> <p>In this section we will use
+<a href="https://expressjs.com/en/starter/generator.html" target="_blank" rel="noopener noreferrer">express-generator<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a> to generate
+a small nodejs express app and make sure we can run it locally.</p> <div class="language-shell extra-class"><pre class="language-shell"><code>npx express-generator ./ --view pug --git
+<span class="token function">npm</span> <span class="token function">install</span>
+<span class="token function">npm</span> start
+</code></pre></div><p>This should start a small web application on
+<a href="http://localhost:3000" target="_blank" rel="noopener noreferrer"><code>localhost:3000</code><span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a>. If everything checks out for you
+feel free to look around the app and don't forget to commit and push the app to
+your repository.</p> <div class="language- extra-class"><pre class="language-text"><code>git add .
+git commit -m &quot;Add simple express app&quot;
+git push
+</code></pre></div><p>With a proper web application in place, we can now take a look at how to deploy
+this to the Azure App Service.</p> <h2 id="deploy-appservice"><a href="#deploy-appservice" class="header-anchor">#</a> Deploy AppService</h2> <p>By now your repositories content should look something like this:</p> <p><img src="/trainingdays/assets/img/list-of-files.4d399088.png" alt="List of files your repository"></p> <p>You should have a workflow file under <code>.github/workflows/</code>, an <code>infra.bicep</code> and
+various files and folders specific to the generated express app.</p> <p>Let's go to our workflow file and extend it by creating a second job named
+<code>deploy-webapp</code> and an output that we can reference for our <code>deploy-infra</code> job.</p> <p>The new <code>deploy-webapp</code> job runs the following steps:</p> <ul><li>check out the source code</li> <li>setup nodejs 12</li> <li>install the npm dependencies from the lockfile</li> <li>login to Azure</li> <li>deploy to the Azure App Service</li></ul> <div class="language-yaml extra-class"><pre class="language-yaml"><code><span class="token comment">#deploy.yaml</span>
+<span class="token key atrule">name</span><span class="token punctuation">:</span> CI
+
+<span class="token key atrule">on</span><span class="token punctuation">:</span>
+  <span class="token key atrule">push</span><span class="token punctuation">:</span>
+
+<span class="token key atrule">env</span><span class="token punctuation">:</span>
+  <span class="token key atrule">RESOURCE_GROUP_NAME</span><span class="token punctuation">:</span> github<span class="token punctuation">-</span>action<span class="token punctuation">-</span>bicep<span class="token punctuation">-</span>rg
+  <span class="token key atrule">RESOURCE_GROUP_LOCATION</span><span class="token punctuation">:</span> westeurope
+  <span class="token key atrule">ENV_NAME</span><span class="token punctuation">:</span> devd4
+
+<span class="token key atrule">jobs</span><span class="token punctuation">:</span>
+  <span class="token key atrule">deploy-infra</span><span class="token punctuation">:</span>
+    <span class="token key atrule">runs-on</span><span class="token punctuation">:</span> ubuntu<span class="token punctuation">-</span>latest
+    <span class="token comment"># The output can be read from other jobs that depend on this one</span>
+    <span class="token key atrule">outputs</span><span class="token punctuation">:</span>
+      <span class="token key atrule">webAppName</span><span class="token punctuation">:</span> $<span class="token punctuation">{</span><span class="token punctuation">{</span> steps.infra.outputs.webAppName <span class="token punctuation">}</span><span class="token punctuation">}</span>
+    <span class="token key atrule">steps</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token key atrule">uses</span><span class="token punctuation">:</span> actions/checkout@v2
+
+      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Azure Login
+        <span class="token key atrule">uses</span><span class="token punctuation">:</span> Azure/login@v1
+        <span class="token key atrule">with</span><span class="token punctuation">:</span>
+          <span class="token key atrule">creds</span><span class="token punctuation">:</span> $<span class="token punctuation">{</span><span class="token punctuation">{</span> secrets.AZURE_CREDENTIALS <span class="token punctuation">}</span><span class="token punctuation">}</span>
+
+      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Create ResourceGroup
+        <span class="token key atrule">run</span><span class="token punctuation">:</span> <span class="token punctuation">&gt;</span><span class="token scalar string">
+          az group create
+          -l ${{ env.RESOURCE_GROUP_LOCATION }}
+          -n ${{ env.RESOURCE_GROUP_NAME }}</span>
+
+      <span class="token punctuation">-</span> <span class="token key atrule">uses</span><span class="token punctuation">:</span> azure/arm<span class="token punctuation">-</span>deploy@v1
+        <span class="token key atrule">id</span><span class="token punctuation">:</span> infra
+        <span class="token key atrule">with</span><span class="token punctuation">:</span>
+          <span class="token key atrule">resourceGroupName</span><span class="token punctuation">:</span> $<span class="token punctuation">{</span><span class="token punctuation">{</span> env.RESOURCE_GROUP_NAME <span class="token punctuation">}</span><span class="token punctuation">}</span>
+          <span class="token key atrule">template</span><span class="token punctuation">:</span> ./infra.bicep
+          <span class="token key atrule">parameters</span><span class="token punctuation">:</span> env=$<span class="token punctuation">{</span><span class="token punctuation">{</span> env.ENV_NAME <span class="token punctuation">}</span><span class="token punctuation">}</span>
+
+      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Print WebApp endpoint
+        <span class="token key atrule">run</span><span class="token punctuation">:</span> echo https<span class="token punctuation">:</span>//$<span class="token punctuation">{</span><span class="token punctuation">{</span> steps.infra.outputs.webAppEndpoint <span class="token punctuation">}</span><span class="token punctuation">}</span>
+
+  <span class="token key atrule">deploy-webapp</span><span class="token punctuation">:</span>
+    <span class="token key atrule">needs</span><span class="token punctuation">:</span> <span class="token punctuation">[</span>deploy<span class="token punctuation">-</span>infra<span class="token punctuation">]</span>
+    <span class="token key atrule">runs-on</span><span class="token punctuation">:</span> ubuntu<span class="token punctuation">-</span>latest
+
+    <span class="token key atrule">steps</span><span class="token punctuation">:</span>
+      <span class="token punctuation">-</span> <span class="token key atrule">uses</span><span class="token punctuation">:</span> actions/checkout@v2
+
+      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Setup Node.js environment
+        <span class="token key atrule">uses</span><span class="token punctuation">:</span> actions/setup<span class="token punctuation">-</span>node@v2.2.0
+        <span class="token key atrule">with</span><span class="token punctuation">:</span>
+          <span class="token key atrule">node-version</span><span class="token punctuation">:</span> 12.x
+
+      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Npm install
+        <span class="token key atrule">run</span><span class="token punctuation">:</span> npm ci
+
+      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Azure Login
+        <span class="token key atrule">uses</span><span class="token punctuation">:</span> Azure/login@v1
+        <span class="token key atrule">with</span><span class="token punctuation">:</span>
+          <span class="token key atrule">creds</span><span class="token punctuation">:</span> $<span class="token punctuation">{</span><span class="token punctuation">{</span> secrets.AZURE_CREDENTIALS <span class="token punctuation">}</span><span class="token punctuation">}</span>
+
+      <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Deploy Azure WebApp
+        <span class="token key atrule">uses</span><span class="token punctuation">:</span> Azure/webapps<span class="token punctuation">-</span>deploy@v2
+        <span class="token key atrule">with</span><span class="token punctuation">:</span>
+          <span class="token comment"># We reference the webAppName output of the deploy-infra job</span>
+          <span class="token key atrule">app-name</span><span class="token punctuation">:</span> $<span class="token punctuation">{</span><span class="token punctuation">{</span> needs.deploy<span class="token punctuation">-</span>infra.outputs.webAppName <span class="token punctuation">}</span><span class="token punctuation">}</span>
+          <span class="token key atrule">startup-command</span><span class="token punctuation">:</span> npm start
+</code></pre></div><p>Once you've updated an started your workflow you should see both dependant jobs
+in graphical overview on your workflows summary page.</p> <p><img src="/trainingdays/assets/img/deploywebapp.c436da41.png" alt="Deployment with two depending jobs running"></p> <p>Wait for the deployment to complete and access your webapps endpoint again from your browser.
+You should see the deployed express app running on your App Service.</p> <h2 id="finish"><a href="#finish" class="header-anchor">#</a> Finish</h2> <p>Congratulations! You've just deployed your first infrastructure and webapp using GitHub Actions.</p> <p>Feel free to make a few minor changes to the webapp and see how the updates to
+your repository trigger a new deployment updating the WebApp in place.</p> <p><a href="/trainingdays/day4/challenges/02-challenge-github-actions-intro.html">◀ Previous challenge</a> | <a href="/trainingdays/day4/" class="router-link-active">🔼 Day 4</a> | <a href="/trainingdays/day4/challenges/04-challenge-azdc-repo.html">Next challenge ▶</a></p></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/azuredevcollege/trainingdays/edit/master/day4/challenges/03-challenge-bicep.md" target="_blank" rel="noopener noreferrer">Edit this page</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <!----></footer> <!----> </main></div><div class="global-ui"></div></div>
+    <script src="/trainingdays/assets/js/app.7bd69a05.js" defer></script><script src="/trainingdays/assets/js/2.07f1ee3f.js" defer></script><script src="/trainingdays/assets/js/32.21668753.js" defer></script>
+  </body>
+</html>
